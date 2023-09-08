@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
-import './App.scss'
+import { FC, useEffect, useState } from 'react'
 
-function App() {
+const Home: FC = () => {
 	const [theme, setTheme] = useState('light')
 	useEffect(() => {
 		if (theme === 'dark') {
@@ -16,7 +15,7 @@ function App() {
 
 	return (
 		<button
-			className="text-dark-600 transition-all dark:text-2xl dark:text-green-700 dark:font-semibold"
+			className="text font bg-black-500 rounded-image animate-fade"
 			onClick={toggleTheme}
 		>
 			Hello world
@@ -24,4 +23,4 @@ function App() {
 	)
 }
 
-export default App
+export default Home

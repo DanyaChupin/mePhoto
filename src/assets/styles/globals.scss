@@ -10,7 +10,7 @@ body {
 	box-sizing: border-box;
 	font-family: Raleway, sans-serif;
 	font-weight: 400;
-	@apply transition-colors dark:bg-slate-400;
+	@apply transition-colors text-black-400 bg-white-400 dark:bg-black-500 dark:text-white-500;
 	a {
 		text-decoration: none;
 	}
