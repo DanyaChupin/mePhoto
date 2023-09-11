@@ -1,0 +1,6 @@
+header {
+	@apply shadow-md h-16 w-full flex mb-5 justify-center animate-fade bg-white-500;
+	> div {
+		@apply flex-center-between w-full px-[22px] xl:px-[52px] max-w-[1440px];
+	}
+}

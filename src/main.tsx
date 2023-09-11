@@ -1,10 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import HomePage from './pages/home'
 import './assets/styles/globals.scss'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Router from './routers/Router'
 
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+		},
+	},
+})
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<HomePage />
+		<QueryClientProvider client={queryClient}>
+			<Router />
+		</QueryClientProvider>
 	</React.StrictMode>
 )

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -23,6 +24,9 @@ export default {
 				bold: '600',
 				light: '200',
 			},
+			border: {
+				DEFAULT: '#707070',
+			},
 			borderRadius: {
 				image: '0.5rem',
 			},
@@ -39,6 +43,21 @@ export default {
 			},
 		},
 		keyframes: {
+			close: {
+				'0%': {
+					opacity: 1,
+				},
+				'99%': {
+					opacity: 0,
+					height: '200',
+					width: '200',
+				},
+				'100%': {
+					opacity: 0,
+					height: 0,
+					width: 0,
+				},
+			},
 			fade: {
 				from: { opacity: 0 },
 				to: { opacity: 1 },
@@ -58,9 +77,31 @@ export default {
 			},
 		},
 		animation: {
-			fade: 'fade .5s ease-in-out',
+			fade: 'fade 1.5s ease-in-out',
 			sceleIn: 'scaleIn .35s ease-in-out',
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(({ addUtilities }) => {
+			addUtilities({
+				'.shadow-main': {
+					boxShadow: 'rgba(0, 0, 0, 0.1) 10px 10px 300px)',
+				},
+				'.outline-border-none': {
+					outline: 'none',
+					border: 'none',
+				},
+				'.flex-center-between': {
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+				},
+				'.image-like-bg': {
+					objectPosition: 'center',
+					objectFit: 'cover',
+					pointerEvents: 'none',
+				},
+			})
+		}),
+	],
 }

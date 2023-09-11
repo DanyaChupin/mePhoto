@@ -1,0 +1,7 @@
+.burger {
+	@apply relative;
+}
+
+.menu {
+	@apply rounded-b-lg animate-sceleIn shadow-lg absolute w-[200px] -right-10 top-11 p-[10px] bg-white-500;
+}
