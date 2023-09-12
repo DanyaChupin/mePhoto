@@ -1,16 +1,14 @@
-import { ChangeEvent, FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import Header from './header/Header'
 
 interface Props {
 	children: ReactNode
-	searchTerm: string
-	handleSearch: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Layout: FC<Props> = ({ children, searchTerm, handleSearch }) => {
+const Layout: FC<Props> = ({ children }) => {
 	return (
 		<>
-			<Header searchTerm={searchTerm} handleSearch={handleSearch} />
+			<Header />
 			{children}
 		</>
 	)

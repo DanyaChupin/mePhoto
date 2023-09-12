@@ -3,7 +3,10 @@
 }
 
 .menu {
-	@apply z-40 rounded-b-lg animate-sceleIn  shadow-lg absolute w-[200px] -right-10 top-11 p-[10px] bg-white-500;
+	@apply z-40 rounded-b-lg animate-fastFade shadow-lg absolute w-[200px] -right-10 top-11 p-[10px] bg-white-500;
+	> ul li {
+		@apply my-4;
+	}
 }
 .close {
 	@apply animate-close;
