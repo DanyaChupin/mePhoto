@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Gallery from '../../gallery/Gallery.js'
 import { IResult } from '../../../types/images.interface.js'
 import styles from './Search.module.scss'
+import Pogination from '../../ui/pogination/Pogination.js'
 
 interface ISearch {
 	images: IResult
@@ -12,15 +13,11 @@ interface ISearch {
 }
 
 const Search: FC<ISearch> = ({ refetch, images, isLoading, setPage, page }) => {
+	console.log('render')
 	return (
 		<section className={styles.search}>
-			<Gallery
-				refetch={refetch}
-				images={images}
-				isLoading={isLoading}
-				setPage={setPage}
-				page={page}
-			/>
+			<Gallery images={images} isLoading={isLoading} />
+			<Pogination page={page} refetch={refetch} setPage={setPage} />
 		</section>
 	)
 }
