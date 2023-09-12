@@ -1,27 +1,19 @@
-import Search from '../components/screens/home/Search'
+import Search from '../components/screens/search/Search'
 import { FC } from 'react'
 import { useSearch } from '../components/gallery/useSearch'
-import Header from '../components/layout/header/Header'
+import Layout from '../components/layout/Layout'
 
 const SearchPage: FC = () => {
-	const { data, isLoading, searchTerm, handleSearch, setPage, page, refetch } =
-		useSearch()
+	const { data, isLoading, refetch } = useSearch()
 
 	return (
-		<>
-			<Header handleSearch={handleSearch} searchTerm={searchTerm} />
+		<Layout>
 			{data ? (
-				<Search
-					refetch={refetch}
-					images={data}
-					isLoading={isLoading}
-					setPage={setPage}
-					page={page}
-				/>
+				<Search refetch={refetch} images={data} isLoading={isLoading} />
 			) : (
 				<div>What do you want to find?</div>
 			)}
-		</>
+		</Layout>
 	)
 }
 

@@ -1,19 +1,16 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 import BurgerMenu from './burgerMenu/BurgerMenu'
 import Logo from './logo/Logo'
 import InputField from '../../ui/inputField/InputField'
 import styles from './Header.module.scss'
-interface IHeader {
-	searchTerm: string
-	handleSearch: (event: ChangeEvent<HTMLInputElement>) => void
-}
-const Header: FC<IHeader> = ({ handleSearch, searchTerm }) => {
+
+const Header: FC = () => {
 	return (
 		<>
 			<header className={styles.header}>
 				<div>
 					<Logo />
-					<InputField handleSearch={handleSearch} searchTerm={searchTerm} />
+					<InputField />
 					<BurgerMenu />
 				</div>
 			</header>

@@ -1,20 +1,25 @@
 import { ChangeEvent, FC, useRef } from 'react'
 import MaterialIcon from '../MaterialIcon'
 import styles from './InputField.module.scss'
+import { useDispatch } from 'react-redux'
+import { setSearch } from '../../../store/search/search.slice'
+import { defaultPage } from '../../../store/page/page.slice'
+import { useTypedSelector } from '../../../hooks/useTypedSelector'
 
-interface IInputField {
-	searchTerm: string
-	handleSearch: (even: ChangeEvent<HTMLInputElement>) => void
-}
-
-const InputField: FC<IInputField> = ({ searchTerm, handleSearch }) => {
+const InputField: FC = () => {
+	const { searchTerm } = useTypedSelector((state) => state.search)
 	const ref = useRef<HTMLInputElement>(null)
-	const handleClick = () => {
+	const dispatch = useDispatch()
+	const changeFocus = () => {
 		if (ref.current) ref.current.focus()
+	}
+	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+		dispatch(setSearch(e.target.value))
+		dispatch(defaultPage())
 	}
 	return (
 		<div className={styles.wrapper}>
-			<MaterialIcon name="MdSearch" onClick={handleClick} />
+			<MaterialIcon name="MdSearch" onClick={changeFocus} />
 			<input
 				ref={ref}
 				value={searchTerm}

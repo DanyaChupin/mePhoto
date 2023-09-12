@@ -7,18 +7,18 @@ import Pogination from '../../ui/pogination/Pogination.js'
 interface ISearch {
 	images: IResult
 	isLoading: boolean
-	setPage: React.Dispatch<React.SetStateAction<number>>
-	page: number
 	refetch: () => void
 }
 
-const Search: FC<ISearch> = ({ refetch, images, isLoading, setPage, page }) => {
+const Search: FC<ISearch> = ({ refetch, images, isLoading }) => {
 	console.log('render')
 	return (
-		<section className={styles.search}>
-			<Gallery images={images} isLoading={isLoading} />
-			<Pogination page={page} refetch={refetch} setPage={setPage} />
-		</section>
+		<>
+			<section className={styles.search}>
+				<Gallery images={images} isLoading={isLoading} />
+			</section>
+			<Pogination refetch={refetch} />
+		</>
 	)
 }
 
