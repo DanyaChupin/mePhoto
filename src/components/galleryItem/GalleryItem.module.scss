@@ -1,0 +1,28 @@
+// .item {
+// 	@apply relative p-2 m-2 shadow-lg rounded-xl cursor-pointer sm:flex  sm:w-[47%] lg:w-[31%];
+// 	&:hover {
+// 		.wrapper {
+// 			@apply z-3 opacity-100;
+// 		}
+// 	}
+.image {
+	@apply z-3 h-[550px] bg-center bg-no-repeat w-screen bg-cover relative m-2 rounded-xl sm:w-[47%] lg:w-[31%];
+	&:hover {
+		.wrapper {
+			@apply animate-fastFade z-2 opacity-100 backdrop-blur-sm;
+		}
+	}
+}
+.avatar {
+	@apply rounded-full shadow-lg mr-3;
+}
+
+.wrapper {
+	@apply opacity-0 animate-close w-full p-7 transition-all duration-75 z-0 rounded-b-xl 
+		text-white-500 absolute bottom-0;
+
+	h1 {
+		@apply font-bold text-xl;
+	}
+}
+// }

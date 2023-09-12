@@ -1,44 +1,28 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { IResult } from '../../types/images.interface'
 import styles from './Gallery.module.scss'
-import { useLocation } from 'react-router-dom'
+import GalleryItem from '../galleryItem/GalleryItem'
+import SkeletonLoader from '../ui/SkeletonLoader'
 
 interface IGallery {
 	images: IResult
 	isLoading: boolean
-	setPage: React.Dispatch<React.SetStateAction<number>>
-	page: number
-	refetch: () => void
 }
 
-const Gallery: FC<IGallery> = ({
-	refetch,
-	images,
-	isLoading,
-	setPage,
-	page,
-}) => {
-	if (!isLoading) console.log(images)
-	const location = useLocation()
-	const handleClick = () => {
-		setPage(page - 1)
-	}
-	useEffect(() => {
-		refetch()
-	}, [page, refetch, location])
+const Gallery: FC<IGallery> = ({ images, isLoading }) => {
 	return (
 		<div className={styles.gallery}>
-			{images.results.map((image) => (
-				<img
-					src={image.urls.small}
-					alt={image.alt_description}
-					key={image.id}
-				/>
-			))}
-			<div>
-				<div>{page}</div>
-				<button onClick={handleClick}>next</button>
-			</div>
+			{isLoading ? (
+				<>
+					<SkeletonLoader count={3} className="m-5" />
+					<SkeletonLoader count={3} className="m-5" />
+					<SkeletonLoader count={3} className="m-5" />
+				</>
+			) : (
+				images.results.map((image) => (
+					<GalleryItem image={image} key={image.id} />
+				))
+			)}
 		</div>
 	)
 }

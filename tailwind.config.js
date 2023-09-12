@@ -49,13 +49,9 @@ export default {
 				},
 				'99%': {
 					opacity: 0,
-					height: '200',
-					width: '200',
 				},
 				'100%': {
 					opacity: 0,
-					height: 0,
-					width: 0,
 				},
 			},
 			fade: {
@@ -79,14 +75,13 @@ export default {
 		animation: {
 			fade: 'fade 1.5s ease-in-out',
 			sceleIn: 'scaleIn .35s ease-in-out',
+			close: 'close 0.2s ease-in-out',
+			fastFade: 'fade 0.2s ease-in-out',
 		},
 	},
 	plugins: [
 		plugin(({ addUtilities }) => {
 			addUtilities({
-				'.shadow-main': {
-					boxShadow: 'rgba(0, 0, 0, 0.1) 10px 10px 300px)',
-				},
 				'.outline-border-none': {
 					outline: 'none',
 					border: 'none',

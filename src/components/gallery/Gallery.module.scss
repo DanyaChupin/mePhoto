@@ -1,1 +1,3 @@
- 
+.gallery {
+	@apply flex-center-between flex-wrap w-full px-[22px] xl:px-[52px] max-w-[1440px];
+}

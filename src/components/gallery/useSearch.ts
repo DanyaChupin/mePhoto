@@ -6,22 +6,23 @@ import { useNavigate } from 'react-router-dom'
 
 export const useSearch = () => {
 	const [searchTerm, setSearchTerm] = useState('')
-	const [page, setPage] = useState(9)
+	const [page, setPage] = useState(1)
 	const debaunceSearch = useDebounce(searchTerm, 500)
 	const navigate = useNavigate()
 	const queryData = useQuery(
 		['search photo list', debaunceSearch],
-		() => PhotoService.getBySlug(debaunceSearch, 10, page),
+		() => PhotoService.getBySlug(debaunceSearch, 12, page),
 		{
 			select: ({ data }) => data,
 			enabled: !!debaunceSearch && !!page,
 			onSuccess: () => {
-				navigate(`/search/${searchTerm}/${page}`)
+				navigate(`/search/${debaunceSearch}/${page}`)
 			},
 		}
 	)
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(e.target.value)
+		setPage(1)
 	}
 	return useMemo(
 		() => ({

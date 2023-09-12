@@ -1,6 +1,3 @@
 .search {
-	@apply w-full flex justify-center;
-	> div {
-		@apply w-full px-[22px]  xl:px-[52px] xl:max-w-[1440px];
-	}
+	@apply w-full flex-col justify-center;
 }
