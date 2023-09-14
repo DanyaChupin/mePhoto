@@ -26,7 +26,7 @@ const Photo: FC = () => {
 				</div>
 				<div>
 					<p>Location</p>
-					<p className={styles.location}>{data?.user.location}</p>
+					<p className={styles.location}>{data?.user.location || 'Unknown'}</p>
 					<p>Description</p>
 					<p className={styles.location}>{data?.alt_description}</p>
 					<p>Tags</p>

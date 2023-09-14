@@ -3,7 +3,7 @@
 }
 
 .menu {
-	@apply z-40 rounded-b-lg animate-fastFade shadow-lg absolute w-[200px] -right-10 top-11 p-[10px] bg-white-500;
+	@apply z-40 rounded-b-lg animate-fastFade shadow-lg absolute w-[200px] -right-10 top-[55px] p-[10px] bg-white-400;
 	> ul li {
 		@apply my-4;
 	}

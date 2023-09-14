@@ -1,21 +1,25 @@
 import { useMemo } from 'react'
-import { useDebounce } from '../../hooks/useDebounce'
 import { useQuery } from '@tanstack/react-query'
 import { PhotoService } from '../../services/photo.services'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export const useSearch = () => {
-	const { debouncePage, debouncedTerm } = useDebounce(1500)
+	const { searchTerm, page } = useParams()
+
+	const slug = String(searchTerm)
+
+	const pageNumber = String(page)
+
 	const navigate = useNavigate()
-	console.log('render')
+
 	const queryData = useQuery(
-		['search photo list', debouncedTerm, debouncePage],
-		() => PhotoService.getBySlug(debouncedTerm, 12, debouncePage),
+		['search photo list', slug, pageNumber],
+		() => PhotoService.getBySlug(slug, 12, pageNumber),
 		{
 			select: ({ data }) => data,
-			enabled: !!debouncedTerm && !!debouncePage,
+			enabled: !!slug && !!pageNumber,
 			onSuccess: () => {
-				if (debouncedTerm) navigate(`/search/${debouncedTerm}/${debouncePage}`)
+				navigate(`/search/${slug}/${pageNumber}`)
 			},
 		}
 	)
