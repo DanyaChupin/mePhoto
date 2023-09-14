@@ -1,7 +1,7 @@
 .wrapper {
-	@apply mx-4 pl-3 h-[36px] rounded-xl font w-[303px] border-[#707070] border-solid border flex items-center justify-start;
+	@apply mx-4  h-[36px] rounded-xl font w-[303px] border-[#707070] border-solid border flex items-center justify-evenly;
 
 	input {
-		@apply ml-2 w-[80%] placeholder:text-black-500;
+		@apply w-[80%] placeholder:text-black-500;
 	}
 }

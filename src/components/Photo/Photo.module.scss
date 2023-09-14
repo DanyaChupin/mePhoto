@@ -1,0 +1,22 @@
+.wrapper {
+	@apply w-full h-[98%] mx-auto px-[22px] lg:flex justify-between max-w-[1440px] xl:px-[52px];
+}
+.photo {
+	@apply h-[60%] bg-center bg-no-repeat 
+	w-full bg-cover shadow-xl rounded-xl  lg:w-[70%] lg:h-[100%];
+}
+.info {
+	@apply mt-7 bg-white-400 h-auto p-5 shadow-xl rounded-xl lg:w-[28%] lg:mt-0;
+}
+.userInfo {
+	@apply flex items-center mb-3;
+	> img {
+		@apply rounded-full;
+	}
+}
+.userName {
+	@apply text-lg ml-3 font-bold;
+}
+.location {
+	@apply font-light mb-3;
+}

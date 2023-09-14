@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react'
 import Header from './header/Header'
+import styles from './Layout.module.scss'
 
 interface Props {
 	children: ReactNode
@@ -7,10 +8,10 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
 	return (
-		<>
+		<div className={styles.wrapper}>
 			<Header />
-			{children}
-		</>
+			<div className={styles.main}>{children}</div>
+		</div>
 	)
 }
 

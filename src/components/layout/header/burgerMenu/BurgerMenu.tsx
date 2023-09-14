@@ -5,6 +5,7 @@ import styles from './BurgerMenu.module.scss'
 
 const BurgerMenu: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
+
 	return (
 		<div className={styles.burger}>
 			<button onClick={() => setIsOpen(!isOpen)}>

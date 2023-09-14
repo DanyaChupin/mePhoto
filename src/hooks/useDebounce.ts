@@ -1,17 +1,23 @@
 import { useEffect, useState } from 'react'
+import { useTypedSelector } from './useTypedSelector'
 
-export const useDebounce = <T>(value: T, delay: number): T => {
-	const [debouncedValue, setDebouncedValue] = useState<T>(value)
+export const useDebounce = (delay: number) => {
+	const { page } = useTypedSelector((state) => state.page)
+	const { searchTerm } = useTypedSelector((state) => state.search)
+	console.log('render page search')
+	const [debouncedTerm, setDebouncedTerm] = useState('')
+	const [debouncePage, setDebouncedPage] = useState(1)
 
 	useEffect(() => {
 		const handler = setTimeout(() => {
-			setDebouncedValue(value)
+			setDebouncedPage(page)
+			setDebouncedTerm(searchTerm)
 		}, delay)
 
 		return () => {
 			clearTimeout(handler)
 		}
-	}, [value, delay])
+	}, [searchTerm, page, delay, debouncedTerm])
 
-	return debouncedValue
+	return { debouncePage, debouncedTerm }
 }

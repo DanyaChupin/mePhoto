@@ -1,25 +1,20 @@
 import { FC, useCallback } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import styles from './Pogination.module.scss'
-import { useTypedSelector } from '../../../hooks/useTypedSelector'
-import { useDispatch } from 'react-redux'
-import { decrementPage, incremetPage } from '../../../store/page/page.slice'
 
-interface IPogination {
-	refetch: () => void
-}
+const Pogination: FC = () => {
+	const { searchTerm, page } = useParams()
+	const navigate = useNavigate()
 
-const Pogination: FC<IPogination> = ({ refetch }) => {
-	const { page } = useTypedSelector((state) => state.page)
-	const dispatch = useDispatch()
 	const nextPage = useCallback(() => {
-		dispatch(incremetPage())
-		refetch()
-	}, [dispatch, refetch])
+		navigate(`/search/${searchTerm}/${Number(page) + 1}`)
+	}, [navigate, page, searchTerm])
+
 	const prevPage = useCallback(() => {
-		if (page == 1) return
-		dispatch(decrementPage())
-		refetch()
-	}, [page, refetch, dispatch])
+		if (Number(page) === 1) return
+		navigate(`/search/${searchTerm}/${Number(page) - 1}`)
+	}, [page, navigate, searchTerm])
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.prev} onClick={prevPage}>

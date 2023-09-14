@@ -7,8 +7,4 @@ export const menu: IMenu[] = [
 		title: 'Home',
 		link: '/',
 	},
-	{
-		title: 'Search',
-		link: '/search',
-	},
 ]
