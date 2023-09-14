@@ -2,10 +2,16 @@ import { FC } from 'react'
 import { IPhoto } from '../../types/images.interface'
 import cn from 'classnames'
 import styles from './GalleryItem.module.scss'
+import { useNavigate } from 'react-router-dom'
 
-const GalleryItem: FC<{ image: IPhoto }> = ({ image }) => {
+const GalleryItem: FC<{ image: IPhoto; id: string }> = ({ image, id }) => {
+	const navigate = useNavigate()
+	const handleClick = () => {
+		navigate(`/photo/${id}`)
+	}
 	return (
 		<div
+			onClick={handleClick}
 			className={styles.image}
 			style={{
 				backgroundImage: `url(${image.urls.regular})`,

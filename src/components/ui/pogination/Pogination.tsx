@@ -1,14 +1,12 @@
 import { FC, useCallback } from 'react'
-import styles from './Pogination.module.scss'
 import { useTypedSelector } from '../../../hooks/useTypedSelector'
 import { useDispatch } from 'react-redux'
 import { decrementPage, incremetPage } from '../../../store/page/page.slice'
+import styles from './Pogination.module.scss'
+import { useSearch } from '../../gallery/useSearch'
 
-interface IPogination {
-	refetch: () => void
-}
-
-const Pogination: FC<IPogination> = ({ refetch }) => {
+const Pogination: FC = () => {
+	const { refetch } = useSearch()
 	const { page } = useTypedSelector((state) => state.page)
 	const dispatch = useDispatch()
 	const nextPage = useCallback(() => {

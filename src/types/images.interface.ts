@@ -1,3 +1,7 @@
+export interface ITag {
+	type: string
+	title: string
+}
 export interface IPhoto {
 	alt_description: string
 	blur_hash: string
@@ -19,7 +23,7 @@ export interface IPhoto {
 	promoted_at: null | string
 	slug: string
 	sponsorship: null | string
-	tags: [unknown]
+	tags: ITag[]
 	topic_submissions: { film: { status: string } }
 	updated_at: string
 	urls: {
@@ -61,7 +65,7 @@ export interface IPhoto {
 		total_likes: number
 		total_photos: number
 		twitter_username: null | string
-		updated_at: string
+		updated_at: Date
 		username: string
 	}
 	width: number

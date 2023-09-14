@@ -1,1 +1,6 @@
-
+.wrapper {
+	@apply h-full flex flex-col;
+}
+.main {
+	@apply flex-auto;
+}

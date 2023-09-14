@@ -7,3 +7,5 @@ export const getSearchUrl = (
 	page: number
 ) =>
 	`${API_URL}/search/photos?query=${searchTerm}&page=${page}&per_page=${perPage}&client_id=${API_KEY}`
+export const getById = (id: string) =>
+	`${API_URL}/photos/${id}?client_id=${API_KEY}`

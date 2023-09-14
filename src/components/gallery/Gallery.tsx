@@ -1,29 +1,28 @@
 import { FC } from 'react'
-import { IResult } from '../../types/images.interface'
-import styles from './Gallery.module.scss'
+import { IPhoto } from '../../types/images.interface'
 import GalleryItem from '../galleryItem/GalleryItem'
-import SkeletonLoader from '../ui/SkeletonLoader'
+import Pogination from '../ui/pogination/Pogination'
+import styles from './Gallery.module.scss'
+import { useParams } from 'react-router-dom'
 
 interface IGallery {
-	images: IResult
-	isLoading: boolean
+	images: IPhoto[]
 }
 
-const Gallery: FC<IGallery> = ({ images, isLoading }) => {
+const Gallery: FC<IGallery> = ({ images }) => {
+	const { searchTerm, page } = useParams()
+	console.log(searchTerm, page)
 	return (
-		<div className={styles.gallery}>
-			{isLoading ? (
-				<>
-					<SkeletonLoader count={3} className="m-5" />
-					<SkeletonLoader count={3} className="m-5" />
-					<SkeletonLoader count={3} className="m-5" />
-				</>
-			) : (
-				images.results.map((image) => (
-					<GalleryItem image={image} key={image.id} />
-				))
-			)}
-		</div>
+		<>
+			<section className={styles.wrapper}>
+				<div className={styles.gallery}>
+					{images.map((image) => (
+						<GalleryItem image={image} key={image.id} id={image.id} />
+					))}
+				</div>
+				<Pogination />
+			</section>
+		</>
 	)
 }
 

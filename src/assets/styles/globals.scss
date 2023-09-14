@@ -7,21 +7,15 @@
 *:focus {
 	outline: none;
 }
-
+html,
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Raleway, sans-serif;
 	font-weight: 400;
-	@apply transition-colors text-black-400 bg-white-400 dark:bg-black-500 dark:text-white-500;
+	@apply h-full transition-colors text-black-400 bg-white-400;
 	a {
 		text-decoration: none;
-	}
-	header {
-		@apply dark:bg-black-400;
-		input {
-			@apply bg-white-500 dark:bg-black-400;
-		}
 	}
 }

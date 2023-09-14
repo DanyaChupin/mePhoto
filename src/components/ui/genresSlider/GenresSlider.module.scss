@@ -1,0 +1,7 @@
+.title {
+	@apply font-light;
+}
+.slider {
+	@apply flex justify-start h-10 items-center flex-nowrap overflow-x-scroll scroll-smooth
+	lg:flex-wrap lg:h-full;
+}
