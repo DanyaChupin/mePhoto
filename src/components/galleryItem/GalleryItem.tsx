@@ -23,8 +23,10 @@ const GalleryItem: FC<{ image: IPhoto; id: string }> = ({ image, id }) => {
 				<div className="flex items-center mb-3">
 					<img
 						className={styles.avatar}
-						src={image.user.profile_image.medium}
+						src={image.user.profile_image.small}
 						alt={image.user.name}
+						sizes="w-14"
+						srcSet={`${image.user.profile_image.large} 1366w, ${image.user.profile_image.medium} 640w`}
 					/>
 
 					<h1>{image.user.name}</h1>
