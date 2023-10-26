@@ -1,0 +1,28 @@
+.wrapper {
+	@apply w-full h-[98%] mx-auto pb-4 px-[22px] lg:flex justify-between max-w-[1440px] xl:px-[52px];
+}
+.photo {
+	height: 80vh;
+	@apply bg-center sm:h-screen bg-no-repeat 
+	w-full bg-cover shadow-xl rounded-xl lg:w-[70%];
+}
+.info {
+	@apply mt-7 bg-white-400 h-auto p-5 shadow-xl rounded-xl lg:w-[28%] lg:mt-0;
+}
+.userInfo {
+	@apply flex items-center mb-3 cursor-pointer;
+	> img {
+		@apply rounded-full;
+	}
+}
+.userName {
+	@apply text-lg ml-3 font-bold;
+}
+.date {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	@apply font-light mb-3;
+}
+.location {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	@apply font-light mb-3;
+}

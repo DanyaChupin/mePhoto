@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { PhotoService } from '../../services/photo.services'
+import { PhotoService } from '../../../services/photo.services'
 import { useNavigate } from 'react-router-dom'
 
 export const useGetById = (id: string) => {

@@ -3,7 +3,6 @@ import MaterialIcon from '../components/ui/MaterialIcon'
 
 const SwitchThemeButton: FC = () => {
 	const [theme, setTheme] = useState('light')
-
 	const toggleTheme = () => {
 		setTheme(theme === 'dark' ? 'light' : 'dark')
 	}
@@ -21,4 +20,5 @@ const SwitchThemeButton: FC = () => {
 		</button>
 	)
 }
+
 export default SwitchThemeButton

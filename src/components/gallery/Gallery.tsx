@@ -6,9 +6,10 @@ import styles from './Gallery.module.scss'
 
 interface IGallery {
 	images: IPhoto[]
+	togglePogination: boolean
 }
 
-const Gallery: FC<IGallery> = ({ images }) => {
+const Gallery: FC<IGallery> = ({ images, togglePogination }) => {
 	return (
 		<>
 			<section className={styles.wrapper}>
@@ -17,7 +18,7 @@ const Gallery: FC<IGallery> = ({ images }) => {
 						<GalleryItem image={image} key={image.id} id={image.id} />
 					))}
 				</div>
-				<Pogination />
+				{togglePogination && <Pogination />}
 			</section>
 		</>
 	)

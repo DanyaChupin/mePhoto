@@ -1,3 +1,5 @@
+import { IUser } from './user.interface'
+
 export interface ITag {
 	type: string
 	title: string
@@ -5,10 +7,10 @@ export interface ITag {
 export interface IPhoto {
 	alt_description: string
 	blur_hash: string
-	breadcrumbs: [unknown]
+	breadcrumbs: [null]
 	color: string
-	created_at: string
-	current_user_collections: [unknown]
+	created_at: Date
+	current_user_collections: [null]
 	description: string | null
 	height: number
 	id: string
@@ -34,40 +36,7 @@ export interface IPhoto {
 		small_s3: string
 		thumb: string
 	}
-	user: {
-		accepted_tos: boolean
-		bio: string
-		first_name: string
-		for_hire: boolean
-		id: string
-		instagram_username: null | string
-		last_name: string
-		links: {
-			followers: string
-			following: string
-			html: string
-			likes: string
-			photos: string
-			portfolio: string
-			self: string
-		}
-		location: string
-		name: string
-		portfolio_url: null | string
-		profile_image: { large: string; medium: string; small: string }
-		social: {
-			instagram_username: null | string
-			paypal_email: null | string
-			portfolio_url: null | string
-			twitter_username: null | string
-		}
-		total_collections: number
-		total_likes: number
-		total_photos: number
-		twitter_username: null | string
-		updated_at: Date
-		username: string
-	}
+	user: IUser
 	width: number
 }
 

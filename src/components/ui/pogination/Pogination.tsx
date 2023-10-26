@@ -1,29 +1,36 @@
-import { FC, useCallback } from 'react'
+import { FC } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styles from './Pogination.module.scss'
+import Button from './Button'
 
 const Pogination: FC = () => {
-	const { searchTerm, page } = useParams()
+	const { searchTerm, page, userName } = useParams()
 	const navigate = useNavigate()
+	const pageNum = Number(page)
+	const setNextPage = (reduceOrAdd: 'increase' | 'decrease') => {
+		const nextPage = reduceOrAdd === 'increase' ? pageNum + 1 : pageNum - 1
+		if (searchTerm) {
+			return `/search/${searchTerm}/${nextPage}`
+		} else if (userName) {
+			return `/users/${userName}/photos/${nextPage}`
+		} else {
+			return `/${nextPage}`
+		}
+	}
+	const nextPage = () => {
+		navigate(setNextPage('increase'))
+	}
 
-	const nextPage = useCallback(() => {
-		navigate(`/search/${searchTerm}/${Number(page) + 1}`)
-	}, [navigate, page, searchTerm])
-
-	const prevPage = useCallback(() => {
-		if (Number(page) === 1) return
-		navigate(`/search/${searchTerm}/${Number(page) - 1}`)
-	}, [page, navigate, searchTerm])
+	const prevPage = () => {
+		if (pageNum === 1) return
+		navigate(setNextPage('decrease'))
+	}
 
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.prev} onClick={prevPage}>
-				Prev
-			</div>
-			{<div className={styles.page}>{page}</div>}
-			<div className={styles.next} onClick={nextPage}>
-				Next
-			</div>
+			<Button title="Prev" onClick={prevPage} />
+			<div className={styles.page}>{page}</div>
+			<Button title="Next" onClick={nextPage} />
 		</div>
 	)
 }

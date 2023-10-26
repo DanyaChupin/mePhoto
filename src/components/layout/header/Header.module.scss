@@ -1,5 +1,5 @@
 header {
-	@apply shadow-md min-h-[80px] w-full flex mb-5 justify-center bg-white-400;
+	@apply shadow-lg min-h-[55px] w-full flex mb-5 justify-center bg-white-400 rounded-2xl py-5;
 	> div {
 		@apply flex-center-between w-full px-[22px] xl:px-[52px] max-w-[1440px];
 	}

@@ -1,13 +1,11 @@
 .wrapper {
-	@apply w-full flex justify-center mt-5 min-h-[80px] items-center
-		bg-white-500 shadow-inner;
-	.next {
-		@apply ml-10 transition-all cursor-pointer hover:underline;
-	}
+	@apply w-full flex justify-center mt-5 min-h-[55px] items-center
+		bg-white-400 shadow-inner text-center;
+
 	.page {
-		@apply text-lg;
+		@apply text-lg border h-8 rounded-md w-8;
 	}
-	.prev {
-		@apply mr-10 cursor-pointer;
-	}
+}
+.button {
+	@apply m-6 px-2 w-[60px] h-8 py-1 rounded-md transition-colors hover:bg-white-500 hover:border hover:text-black-500 bg-black-500 text-white-400;
 }

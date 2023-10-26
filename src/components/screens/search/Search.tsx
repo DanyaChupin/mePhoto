@@ -8,9 +8,9 @@ const Search: FC = () => {
 	return (
 		<>
 			{isLoading ? (
-				<div className="flex justify-center">Loading</div>
+				<div className="flex justify-center">Loading...</div>
 			) : (
-				<Gallery images={data?.results || []} />
+				<Gallery images={data?.results || []} togglePogination={true} />
 			)}
 		</>
 	)

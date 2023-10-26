@@ -6,12 +6,14 @@ import { useNavigate } from 'react-router-dom'
 
 const GalleryItem: FC<{ image: IPhoto; id: string }> = ({ image, id }) => {
 	const navigate = useNavigate()
-	const handleClick = () => {
+
+	const goToPhoto = () => {
 		navigate(`/photo/${id}`)
 	}
+
 	return (
 		<div
-			onClick={handleClick}
+			onClick={goToPhoto}
 			className={styles.image}
 			style={{
 				backgroundImage: `url(${image.urls.regular})`,

@@ -1,0 +1,13 @@
+.userGallery__wrapper {
+	@apply w-full items-center mt-5 text-center;
+
+	span {
+		@apply flex bg-black-400 h-[1px] mb-5;
+	}
+}
+.userGallery__title {
+	@apply text-xl;
+}
+.userGallery__button {
+	@apply text-[blue];
+}

@@ -1,0 +1,16 @@
+.statistic__wrapper {
+	@apply justify-between bg-[#F8F8FA] my-5 items-center flex flex-wrap text-center rounded-[12px]  sm:flex-row;
+}
+
+.statistics__item {
+	flex: 4%;
+	@apply flex-col m-5 mx-10;
+	.item__count {
+		@apply mb-2 font-bold text-2xl;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+			sans-serif;
+	}
+	.item__title {
+		@apply text-xs text-[#C3C3D1];
+	}
+}
