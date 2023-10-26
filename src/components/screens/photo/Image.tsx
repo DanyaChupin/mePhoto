@@ -1,13 +1,20 @@
 import { FC } from 'react'
 import styles from './Photo.module.scss'
-const Image: FC<{ image: string }> = ({ image }) => {
+
+interface IImage {
+	image: {
+		full: string
+		regular: string
+		small: string
+	}
+}
+const Image: FC<IImage> = ({ image }) => {
 	return (
-		<div
+		<img
 			className={styles.photo}
-			style={{
-				backgroundImage: `url(${image})`,
-			}}
-		></div>
+			src={image.small}
+			srcSet={`${image.regular} 640w, ${image.full} 1366w`}
+		/>
 	)
 }
 

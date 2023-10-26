@@ -9,7 +9,7 @@ const Photo: FC<{ data: IPhoto }> = ({ data }) => {
 		<div className={styles.wrapper}>
 			{data && (
 				<>
-					<Image image={data.urls.full} />
+					<Image image={data.urls} />
 					<PhotoInfo data={data} />
 				</>
 			)}

@@ -3,8 +3,8 @@
 }
 .photo {
 	height: 80vh;
-	@apply bg-center sm:h-screen bg-no-repeat 
-	w-full bg-cover shadow-xl rounded-xl lg:w-[70%];
+	@apply sm:h-screen image-like-bg
+	w-full  shadow-xl rounded-xl lg:w-[70%];
 }
 .info {
 	@apply mt-7 bg-white-400 h-auto p-5 shadow-xl rounded-xl lg:w-[28%] lg:mt-0;
