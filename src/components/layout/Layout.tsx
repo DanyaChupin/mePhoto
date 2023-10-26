@@ -10,7 +10,7 @@ const Layout: FC<Props> = ({ children }) => {
 	return (
 		<div className={styles.wrapper}>
 			<Header />
-			<div className={styles.main}>{children}</div>
+			<section className={styles.main}>{children}</section>
 		</div>
 	)
 }

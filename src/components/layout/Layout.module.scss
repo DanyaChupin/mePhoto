@@ -1,6 +1,6 @@
 .wrapper {
-	@apply h-full flex flex-col;
+	@apply h-full flex-col;
 }
 .main {
-	@apply flex-auto;
+	@apply flex justify-center h-auto;
 }

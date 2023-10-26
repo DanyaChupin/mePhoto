@@ -1,6 +1,6 @@
 .wrapper {
-	@apply w-full flex flex-col justify-center;
+	@apply h-full w-full flex flex-col justify-center;
 }
 .gallery {
-	@apply flex mx-auto justify-between flex-wrap w-full px-[22px] xl:px-[52px] max-w-[1440px];
+	@apply flex flex-1 mx-auto justify-between flex-wrap w-full px-[22px] xl:px-[52px] max-w-[1440px];
 }

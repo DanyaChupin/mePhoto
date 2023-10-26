@@ -1,0 +1,18 @@
+.wrapper {
+	@apply flex p-5 flex-col pb-14 mb-6 items-center justify-center bg-white-400 w-full  shadow-xl rounded-xl max-w-[1440px] mx-[22px] xl:mx-[52px];
+}
+.userInfo {
+	@apply flex justify-center items-center;
+}
+.userAvatar {
+	@apply rounded-full mr-9;
+}
+.userName {
+	@apply text-2xl;
+}
+.userLocation {
+	@apply text-xs;
+}
+.userMorePhoto__button {
+	@apply text-[#0B44FF] mt-20;
+}
