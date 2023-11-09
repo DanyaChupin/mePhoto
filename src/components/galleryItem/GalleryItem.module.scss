@@ -1,5 +1,6 @@
 .image {
-	@apply cursor-pointer z-3 h-[550px] bg-center bg-no-repeat w-screen bg-cover relative m-2 rounded-xl sm:w-[47%] lg:w-[31%];
+	flex: 1 1 calc(100% / 3 - 16px * 2 / 3);
+	@apply cursor-pointer min-w-[300px] z-3 h-[550px] bg-center bg-no-repeat w-screen bg-cover relative  rounded-xl sm:w-[47%] lg:w-[31%];
 	&:hover {
 		.wrapper {
 			@apply animate-fastFade z-2 opacity-100 backdrop-blur-sm;

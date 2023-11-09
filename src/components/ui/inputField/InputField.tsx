@@ -26,12 +26,13 @@ const InputField: FC = () => {
 
 	return (
 		<form onSubmit={handleClickSearch} className={styles.wrapper}>
-			<label>
+			<label form="search">
 				<input
 					className={styles.input}
 					onChange={handleSearch}
 					value={searchTerm}
 					placeholder="Search image..."
+					name="search"
 				/>
 			</label>
 			<MaterialIcon

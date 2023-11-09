@@ -14,6 +14,7 @@ const Image: FC<IImage> = ({ image }) => {
 			className={styles.photo}
 			src={image.small}
 			srcSet={`${image.regular} 640w, ${image.full} 1366w`}
+			alt="photo"
 		/>
 	)
 }
