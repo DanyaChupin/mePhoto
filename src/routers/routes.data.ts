@@ -3,7 +3,7 @@ import PhotoPage from '../pages/photo'
 import SearchPage from '../pages/search'
 import UserPage from '../pages/user'
 import Redirect from '../pages/redirect'
-import UserGallery from '../pages/UserGallery'
+import UserGallery from '../pages/userGallery'
 
 export const routes = [
 	{
